@@ -4,7 +4,7 @@ import { LogIn } from 'pages/LogIn';
 import { Registration } from 'pages/Registration';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { fetchCurrentUser } from 'redux/auth/authThunk';
 import { Layout } from './Layout/Layout';
 import { PrivateRoute } from './PrivateRoute/PrivateRoute';
@@ -46,6 +46,7 @@ export const App = () => {
               </PrivateRoute>
             }
           />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
     </>

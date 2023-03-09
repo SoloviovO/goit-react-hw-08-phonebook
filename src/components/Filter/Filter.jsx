@@ -1,22 +1,25 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContactsFilter } from 'redux/contacts/contactsSelectors';
 import { filterContacts } from 'redux/contacts/contactsSlice';
-import css from './Filter.module.css';
+import { Box, Container, FormLabel, Input } from '@chakra-ui/react';
 
 export const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectContactsFilter);
 
   return (
-    <label className={css.label}>
-      Find contacts by name
-      <input
-        className={css.input}
-        onChange={event => dispatch(filterContacts(event.target.value))}
-        value={filter}
-        type="text"
-        name="filter"
-      />
-    </label>
+    <Container maxW="container.xl">
+      <Box maxW="450px" m="0 auto" p="0 50px 10px 50px">
+        <FormLabel>
+          Find contacts by name
+          <Input
+            onChange={event => dispatch(filterContacts(event.target.value))}
+            value={filter}
+            type="text"
+            name="filter"
+          />
+        </FormLabel>
+      </Box>
+    </Container>
   );
 };

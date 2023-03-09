@@ -1,15 +1,16 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { List, ListItem } from '@chakra-ui/react';
+import { NavLinkStyled } from './AuthNav.styled';
 
 export const AuthNav = () => {
   return (
-    <ul>
-      <li>
-        <NavLink to="/register">Registration</NavLink>
-      </li>
-      <li>
-        <NavLink to="/login">Log In</NavLink>
-      </li>
-    </ul>
+    <List ml="auto" display="flex">
+      <ListItem>
+        <NavLinkStyled to="/register">Registration</NavLinkStyled>
+      </ListItem>
+      <ListItem ml="10px">
+        <NavLinkStyled to="/login">Log In</NavLinkStyled>
+      </ListItem>
+    </List>
   );
 };
