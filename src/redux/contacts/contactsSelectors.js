@@ -12,3 +12,5 @@ export const selectFilteredContacts = createSelector(
     );
   }
 );
+
+export const selectAllContacts = state => state.contacts.contacts.items;
