@@ -16,8 +16,8 @@ export const ContactList = () => {
   return (
     <ul className={css.list}>
       {filteredContacts.length > 0 ? (
-        filteredContacts.map(({ id, name, phone }) => (
-          <ContactItem key={id} id={id} name={name} number={phone} />
+        filteredContacts.map(({ id, name, number }) => (
+          <ContactItem key={id} id={id} name={name} number={number} />
         ))
       ) : (
         <div className={css.text}>Contacts not found</div>

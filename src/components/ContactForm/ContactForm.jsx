@@ -16,7 +16,7 @@ export const ContactForm = () => {
 
     const contact = {
       name: name,
-      phone: number,
+      number: number,
     };
 
     if (contacts.find(contact => contact.name === name)) {
